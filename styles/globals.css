@@ -25,3 +25,74 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.carousel-container {
+  display: flex;
+  scroll-snap-type: x mandatory;
+}
+  /* Define styles for each individual slide */
+  .carousel-slide {
+    flex: 0 0 100%; /* Each slide takes up the full width of the container */
+  scroll-snap-align: start;
+  width: 110%;
+  padding: 0 10px;
+  }
+
+  .carousel-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  @keyframes slide{
+    from{
+      transform: translateX(0%);
+    }
+    to{
+      transform: translateX(calc(-87%));
+    }
+  }
+
+.logos-slide{
+ display: inline-flex;
+  animation: 14s slide infinite linear;
+  transition: transform 0.1s ease-in-out;
+}
+
+.slide{
+  display: flex;
+}
+
+@keyframes slide-in-bottom-to-top {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.bullet-list {
+  @apply flex flex-col list-none pl-0;
+}
+
+/* This class styles the bullet point */
+.bullet-list p::before {
+  content: "•";
+  @apply inline-block mr-2 text-black;
+}
+
+#btn:hover{
+  background-color: white;
+  color: black;
+  
+}
+.content {
+  display: none;
+}
+
+/* Styles for showing content */
+.content.show {
+  display: block;
+  transition: all 0.5s cubic-bezier(1,0,1,0);
+}

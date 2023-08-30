@@ -6,8 +6,15 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  
   theme: {
     extend: {
+      fontFamily: {
+        evolventa: ['Evolventa', 'sans-serif'],
+        epilogue: ['Epilogue', 'sans-serif'],
+        'jakarta-sans': ['"Jakarta Sans"', 'sans-serif'], // Add the Evolventa font family
+      },
+      
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,6 +22,7 @@ const config: Config = {
       },
     },
   },
+  
   plugins: [],
 }
 export default config
